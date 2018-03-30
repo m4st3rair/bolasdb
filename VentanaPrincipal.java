@@ -9,18 +9,27 @@ import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 
 public class VentanaPrincipal extends JFrame implements ActionListener{
     private JPanel panelPrincipal, panelMenu;
     private JButton[] botoneraMenu;
+    private PanelBusqueda panelbusqueda;
     
     
+      
     public VentanaPrincipal(){
         super("Creativos");
         //[ancho][largo]
@@ -37,6 +46,12 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
         panelMenu.setBackground(Color.black);
         panelPrincipal=new JPanel();
         panelPrincipal.setBackground(Color.white);
+        panelPrincipal.setLayout(new GridLayout());
+        
+        panelbusqueda= new PanelBusqueda();
+        
+        
+        
         
         botoneraMenu= new JButton[7];
         
@@ -86,7 +101,34 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       switch(ae.getActionCommand()){
+            case "0":
+                System.out.println("Regresar a La vista Principal");
+            break;
+           case "1":
+            panelPrincipal.add(panelbusqueda);// se añade el panel de la busqueda (aun sin terminar)
+            panelPrincipal.updateUI();//Se utiliza para refrezcar el contenido del panel y asi muetre el panel recien agregado
+            
+            break;
+           case "2":
+            
+            break;
+           case "3":
+            
+            break;
+           case "4":
+            
+            break;
+           case "5":
+            
+            break;
+           case "6":
+            
+            break;
+           
+       } 
+        
+        
     }
     
     
