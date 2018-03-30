@@ -102,27 +102,30 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent ae) {
        switch(ae.getActionCommand()){
-            case "0":
+            case "0": //INICO 
                 System.out.println("Regresar a La vista Principal");
-            break;
-           case "1":
-            panelPrincipal.add(panelbusqueda);// se añade el panel de la busqueda (aun sin terminar)
-            panelPrincipal.updateUI();//Se utiliza para refrezcar el contenido del panel y asi muetre el panel recien agregado
+                panelPrincipal.remove(panelbusqueda);
+                panelPrincipal.updateUI();//Se utiliza para refrezcar el contenido del panel y asi muetre el panel recien agregado
             
             break;
-           case "2":
+           case "1"://BUSCAR
+                panelPrincipal.add(panelbusqueda);// se añade el panel de la busqueda (aun sin terminar)
+                panelPrincipal.updateUI();//Se utiliza para refrezcar el contenido del panel y asi muetre el panel recien agregado
             
             break;
-           case "3":
+           case "2"://ALMACEN(PRODUCTOS)
             
             break;
-           case "4":
+           case "3"://PERSONAS
             
             break;
-           case "5":
+           case "4"://COTIZACION
             
             break;
-           case "6":
+           case "5"://RECORDATORIOS
+            
+            break;
+           case "6"://AYUDA
             
             break;
            

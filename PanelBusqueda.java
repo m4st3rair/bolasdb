@@ -23,7 +23,7 @@ import javax.swing.event.ListSelectionEvent;
 public class PanelBusqueda extends JPanel{
     private JScrollPane sPanelArea;
     private JPanel panA, panAa, panAb, panB, panBa, panBb;
-    private JButton btnBuscar;
+    private JButton btnBuscar, btnCotizar;
     private JTextField txtBuscar;
     private JTextArea areaSeleccion;
     private JLabel labelImagen;
@@ -36,6 +36,9 @@ public class PanelBusqueda extends JPanel{
         super();
         
         
+        btnCotizar= new JButton("Cotizar");
+        labelImagen= new JLabel("labelImagen"/*Aun de prueba*/);
+        
         listaMostrarBuscar= new ArrayList();
         lista1= new DefaultListModel();
         sPanelArea= new JScrollPane();
@@ -45,8 +48,8 @@ public class PanelBusqueda extends JPanel{
         this.setLayout(new GridLayout(1,2));
         
         btnBuscar= new JButton("Buscar");
-        txtBuscar= new JTextField(20);
-        
+        txtBuscar= new JTextField(25);
+               
         
         
         lista.addListSelectionListener((ListSelectionEvent e) -> {
@@ -122,8 +125,30 @@ public class PanelBusqueda extends JPanel{
         
         /********Construccion del Panel B (Derecha)*********/
         panB= new JPanel();
+        panB.setLayout(new GridLayout(2,1));
+        
+        //Panel Superior del PanaelB
         panBa= new JPanel();
+        panBa.setBackground(Color.WHITE);
+        panBa.setLayout(new GridLayout());
+        panBa.add(labelImagen);
+        
+        //Panel Inferior del PanelB
         panBb= new JPanel();
+        panBb.setLayout(new BorderLayout());
+        /*paneles auxiliares para un mejor acomodamiento del panel*/
+        JPanel aux1,aux2;
+        aux1= new JPanel(null);
+        aux2= new JPanel(new FlowLayout());
+        aux2.add(btnCotizar);
+        
+        
+        
+        
+        //Union de los paneles Bay Bb
+        panB.add(panBa);
+        panB.add(panBb);
+        
         
         /*************Construccion del panel Principal (PanelBusqueda)*********************/
     
