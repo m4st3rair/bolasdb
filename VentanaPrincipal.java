@@ -82,7 +82,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
         
         this.setLayout(null);
         panelMenu.setBounds(0, 0, 90, 700);
-        panelPrincipal.setBounds(90, 0, 1200, 700);
+        panelPrincipal.setBounds(90, 0, 1200, 660);
         this.add(panelMenu);
         this.add(panelPrincipal);
         

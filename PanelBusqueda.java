@@ -15,9 +15,11 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.event.ListSelectionEvent;
+import javax.swing.table.DefaultTableModel;
 
 
 public class PanelBusqueda extends JPanel{
@@ -26,7 +28,7 @@ public class PanelBusqueda extends JPanel{
     private JButton btnBuscar, btnCotizar;
     private JTextField txtBuscar;
     private JTextArea areaSeleccion;
-    private JLabel labelImagen;
+    private JLabel labelImagen, precioMayoreo, precioMenudeo,piezasMinMayoreo, pMa, pMe, pMm;
     private JList lista;
     private DefaultListModel lista1;
     private ArrayList<Producto> listaMostrarBuscar;
@@ -126,6 +128,8 @@ public class PanelBusqueda extends JPanel{
         /********Construccion del Panel B (Derecha)*********/
         panB= new JPanel();
         panB.setLayout(new GridLayout(2,1));
+
+        
         
         //Panel Superior del PanaelB
         panBa= new JPanel();
@@ -133,10 +137,10 @@ public class PanelBusqueda extends JPanel{
         panBa.setLayout(new GridLayout());
         panBa.add(labelImagen);
         
+        
         //Panel Inferior del PanelB
         panBb= new JPanel();
         panBb.setLayout(new BorderLayout());
-        /*paneles auxiliares para un mejor acomodamiento del panel*/
         JPanel aux1,aux2;
         aux1= new JPanel(null);
         aux2= new JPanel(new FlowLayout());
@@ -145,7 +149,32 @@ public class PanelBusqueda extends JPanel{
         
         
         
-        //Union de los paneles Bay Bb
+        precioMayoreo=new JLabel("Precio Mayoreo ");
+        precioMayoreo.setBounds(90, 60, 150, 20);
+        precioMenudeo= new JLabel("Precio Menudeo");
+        precioMenudeo.setBounds(90, 120, 150, 20);
+        piezasMinMayoreo = new JLabel("Piezas Minimo Mayoreo");
+        piezasMinMayoreo.setBounds(90, 180, 150, 20);
+        pMa= new JLabel("$$$");
+        pMa.setBounds(320, 60, 150,20);
+        pMe= new JLabel("$$$");
+        pMe.setBounds(320, 120, 150, 20);
+        pMm= new JLabel("##");
+        pMm.setBounds(320, 180, 150, 20);
+        
+        aux1.add(precioMayoreo);
+        aux1.add(precioMenudeo);
+        aux1.add(piezasMinMayoreo);
+        aux1.add(pMa);
+        aux1.add(pMe);
+        aux1.add(pMm);
+        
+        
+        panBb.add(aux1, BorderLayout.CENTER);
+        panBb.add(aux2, BorderLayout.SOUTH);
+        
+        
+        //Union de los paneles Ba y Bb
         panB.add(panBa);
         panB.add(panBb);
         
@@ -157,6 +186,7 @@ public class PanelBusqueda extends JPanel{
         
         
     }
+    
     
     
     
