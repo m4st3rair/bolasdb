@@ -8,8 +8,8 @@ public class Producto {
     private String  desc;   //descripcion del producto
     private int codigoProd; //[9999]
     private int existencia; //numero de productos en existencia
-    private double precioMayoreo, precioMenudeo;
-    private int numeroMinimoMayoreo;
+    private double precioMayoreo, precioMenudeo;//precios posibles
+    private int numeroMinimoMayoreo;//camtidades apartir de cuando se considera aplicar un precio
     private String dirFoto;//Direccion de la foto
     
     
